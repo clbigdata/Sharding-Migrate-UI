@@ -16,6 +16,7 @@ const count = ref(0)
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
+  <p>这是一个开源项目</p>
 
   <p>
     Check out
