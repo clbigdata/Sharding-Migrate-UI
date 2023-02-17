@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { defineComponent, reactive } from 'vue'
-interface CountObject{
-  count:number
-}
-
-const reactiveObj = reactive<CountObject>({count:0})
-
+import { defineComponent } from "vue";
+export default defineComponent({
+  data() {
+    return {
+      message: "dfsdfsdf",
+    };
+  },
+  directives: {
+    componentTextByContent: {
+      mounted(el, binding) {
+        console.log(binding);
+        el.innerHTML = binding.value;
+      },
+    },
+  },
+});
 </script>
 
 <template>
-
-  <p>
-    响应式：Count:{{ reactiveObj.count }}
-    <span><button @click="reactiveObj.count++">加1</button></span>
-  </p>
-  
+  <p v-componentTextByContent="message"></p>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
+
